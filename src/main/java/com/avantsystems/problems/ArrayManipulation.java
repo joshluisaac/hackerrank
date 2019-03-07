@@ -1,5 +1,7 @@
 package com.avantsystems.problems;
 
+import java.util.Arrays;
+
 public class ArrayManipulation {
 
     static void execute(int n, int[][] queries){
@@ -10,26 +12,20 @@ public class ArrayManipulation {
             int summand = queries[i][2];
             recurse(ARRAY,startIndex,endIndex,summand);
         }
-        int result = getMax(ARRAY);
+        int result = max(ARRAY);
         System.out.println(result);
     }
 
-
-    public static int getMax(int[] ARRAY){
-        int minVal = Integer.MIN_VALUE;
-        for (int i = 0; i < ARRAY.length; i++) {
-            if (ARRAY[i] > minVal) {
-                minVal = ARRAY[i];
-            }
-        }
-        return minVal;
+    public static int max(int[] arr){
+        return Arrays.stream(arr).reduce((c1,c2) -> (c1 > c2) ? c1 : c2).orElse(-1);
     }
 
-    static void recurse(int[] ARRAY, int startIndex, int endIndex, int summand){
-        for (int i = 0; i < ARRAY.length; i++) {
+
+    static void recurse(int[] arr, int startIndex, int endIndex, int summand){
+        for (int i = 0; i < arr.length; i++) {
             int index = i + 1;
             if (index >= startIndex && index <= endIndex) {
-                ARRAY[i] = ARRAY[i] + summand;
+                arr[i] = arr[i] + summand;
             }
         }
     }
