@@ -1,4 +1,4 @@
-package com.avantsystems.problems;
+package com.avantsystems.problems.overlappingrectangles;
 
 public class RectangleManager {
 

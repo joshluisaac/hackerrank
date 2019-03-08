@@ -1,4 +1,4 @@
-package com.avantsystems.problems;
+package com.avantsystems.problems.datastructures.arrays;
 
 import java.util.ArrayList;
 import java.util.List;

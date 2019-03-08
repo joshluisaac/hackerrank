@@ -1,8 +1,8 @@
-package com.avantsystems.problems;
+package com.avantsystems.problems.datastructures.arrays;
 
 import java.util.Arrays;
 
-public class MatrixRotation {
+public class ArrayRotation {
 
     static int[] rotateArray(int[] arr,final int d) {
         final int n = arr.length;
@@ -19,7 +19,7 @@ public class MatrixRotation {
 
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
-        System.out.println(Arrays.toString(MatrixRotation.rotateArray(arr, 4)));
+        System.out.println(Arrays.toString(ArrayRotation.rotateArray(arr, 4)));
     }
 
 }
