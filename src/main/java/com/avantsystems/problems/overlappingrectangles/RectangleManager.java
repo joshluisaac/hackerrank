@@ -50,8 +50,8 @@ public class RectangleManager {
 
 
     public static void main(String[] args) {
-        Rectangle rectangle1 = new Rectangle(2,5,1,5);
-        Rectangle rectangle2 = new Rectangle(3,5,2,7);
+        Rectangle rectangle1 = new Rectangle(0,10,0,10);
+        Rectangle rectangle2 = new Rectangle(7,10,7,10);
         int k = new RectangleManager().calculateOverLappingArea(rectangle1, rectangle2);
         System.out.println(k);
     }
