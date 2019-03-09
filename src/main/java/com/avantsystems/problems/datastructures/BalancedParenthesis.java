@@ -1,6 +1,7 @@
 package com.avantsystems.problems.datastructures;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.Deque;
 
 public class BalancedParenthesis {
@@ -28,12 +29,9 @@ public class BalancedParenthesis {
     }
 
     private static boolean matches(char openToken, char closedToken){
-        for (char[] array : TOKENS) {
-            if(array[0] == openToken) {
-                return array[1] == closedToken;
-            }
-        }
-        return false;
+        return Arrays.stream(TOKENS)
+                .filter(c -> c[0] == openToken)
+                .anyMatch(c -> c[1] == closedToken);
     }
 
     public static void main(String[] args) {
