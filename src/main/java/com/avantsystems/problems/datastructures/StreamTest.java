@@ -18,8 +18,7 @@ public class StreamTest {
     }
 
     static void stream2() {
-        Stream
-                .of("Josh", "Zoe", "Asha", "Maqueda", "Bodhi", "Natasha","Samuel")
+        Stream.of("Josh", "Zoe", "Asha", "Maqueda", "Bodhi", "Natasha","Samuel")
                 .map(s -> {
                     System.out.println("Map: " + s);
                     return s.toUpperCase();

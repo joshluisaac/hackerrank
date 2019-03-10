@@ -45,9 +45,8 @@ public class BalancedParenthesis {
     }
 
     public static void main(String[] args) {
-        //boolean isBalanced = BalancedParenthesis.execute("([(({()}))])");
-        //System.out.println(isBalanced);
-
+        boolean isBalanced = BalancedParenthesis.execute("([(({()}))])");
+        System.out.println(isBalanced);
         boolean result = BalancedParenthesis.execute2("([{{}(({()}))])");
         System.out.println(result);
     }
