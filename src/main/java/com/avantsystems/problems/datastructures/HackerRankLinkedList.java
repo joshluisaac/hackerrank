@@ -24,7 +24,7 @@ public class HackerRankLinkedList {
 
 
     static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
-        HackerRankLinkedList.SinglyLinkedListNode newNode = new HackerRankLinkedList.SinglyLinkedListNode(data);git stat
+        HackerRankLinkedList.SinglyLinkedListNode newNode = new HackerRankLinkedList.SinglyLinkedListNode(data);
         HackerRankLinkedList.SinglyLinkedListNode tail = head;
 
         if (head == null) {
