@@ -8,7 +8,6 @@ import java.util.stream.Stream;
 
 public class StreamTest {
 
-
     static void execute() {
         List<String> list = Arrays.asList("josh,zoe,asha,queda", "2", "zoe", "jay", "shane");
         Stream<String> stream = list.stream();
@@ -18,18 +17,17 @@ public class StreamTest {
     }
 
     static void stream2() {
-        Stream.of("Josh", "Zoe", "Asha", "Maqueda", "Bodhi", "Natasha","Samuel")
-                .map(s -> {
-                    System.out.println("Map: " + s);
-                    return s.toUpperCase();
-                }).anyMatch(s -> {
+        Stream.of("Josh", "Zoe", "Asha", "Maqueda", "Bodhi", "Natasha", "Samuel").map(s -> {
+            System.out.println("Map: " + s);
+            return s.toUpperCase();
+        }).anyMatch(s -> {
             System.out.println(s);
             return s.startsWith("Z");
         });
     }
 
     public static void main(String[] args) {
-        //StreamTest.execute();
+        // StreamTest.execute();
         StreamTest.stream2();
     }
 
