@@ -4,12 +4,27 @@ import java.util.Arrays;
 
 public class ArraySort {
 
+    static void toSortedState(int[] arr, int index){
+        if (index == 0) return;
 
-    static void swap(int[] arr, int index){
-        int tmp = arr[index];
-        arr[index] = arr[index-1];
-        arr[index-1] = tmp;
-        System.out.println("Swapped " + Arrays.toString(arr));
+        if (arr[index] < arr[index-1]) {
+            //hold currVal in a temp cache
+            int currVal = arr[index];
+
+            //swap current for previous
+            arr[index] = arr[index-1];
+
+            //swap previous for current
+            arr[index-1] = currVal;
+
+            System.out.println("Swapped " + Arrays.toString(arr));
+
+            toSortedState(arr, index-1);
+            //swapRecurse(arr, );
+        }
+
+
+
     }
 
 
@@ -18,38 +33,30 @@ public class ArraySort {
         for (int i = index-1; i > 0 ; i--) {
             System.out.println("[" + i + "] " + arr[i]);
             if(i >=0 && arr[i] < arr[i-1]) {
-                swap(arr,i);
+                toSortedState(arr,i);
             }
         }
     }
 
 
     static void sort(int[] arr){
-        int size = arr.length;
-        for (int i = 1; i < size; i++) {
-
-                if((arr[i] < arr[i-1])) {
-                    swap(arr,i);
-                    iterateBackwards(arr,i);
-                }
+        //start iterating from the second element in the list
+        for (int i = 1; i < arr.length; i++) {
+            int currVal = arr[i];
+            int prevVal = arr[i-1];
+            System.out.println("Iteration [" + i + "] ");
+            //if the current item is greater than the previous then call swap method.
+                if((currVal < prevVal)) toSortedState(arr,i);
         }
 
     }
 
     public static void main(String[] args) {
-
         //int[] arr = new int[]{1,2,3,4,5,6,0,9};
         int[] arr = new int[]{7, 1, 3, 2, 4, 5, 6};
-
-
-
-        ArraySort.sort(arr);
-
         System.out.println(Arrays.toString(arr));
-
+        ArraySort.sort(arr);
+        System.out.println(Arrays.toString(arr));
         //ArraySort.iterateBackwards(arr,5);
-
     }
-
-
 }
