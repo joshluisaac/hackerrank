@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class BalancedParenthesis {
 
-    private static final char[][] TOKENS = {{'{', '}'}, {'[', ']'}, {'(', ')'}};
+    private static final char[][] TOKENS = { { '{', '}' }, { '[', ']' }, { '(', ')' } };
 
     private static boolean isOpenToken(char c) {
         return Arrays.stream(TOKENS).anyMatch(token -> token[0] == c);
@@ -30,7 +30,7 @@ public class BalancedParenthesis {
         return stack.isEmpty();
     }
 
-
+    // Java 8 version
     private static boolean execute2(String expression) {
         char[] a = expression.toCharArray();
         Deque<Character> stack = new ArrayDeque<>();
@@ -47,9 +47,9 @@ public class BalancedParenthesis {
     public static void main(String[] args) {
         boolean isBalanced = BalancedParenthesis.execute("([(({()}))])");
         System.out.println(isBalanced);
-        boolean result = BalancedParenthesis.execute2("([{{}(({()}))])");
+
+        boolean result = BalancedParenthesis.execute2("([{{}}(({()}))])");
         System.out.println(result);
     }
-
 
 }
