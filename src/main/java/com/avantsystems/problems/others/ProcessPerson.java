@@ -25,6 +25,11 @@ public class ProcessPerson {
         Person person2 = personFactory.create("Peter2", "Parker2", 4, new Date(), 91);
         Person person3 = personFactory.create("Peter3", "Parker3", 6, new Date(), 94);
         Person person4 = personFactory.create("Peter4", "Parker4", 7, new Date(), 98);
+        Person person5 = person4;
+        System.out.println(person4.hashCode());
+        System.out.println(person5.hashCode());
+
+        person5.setAge(45);
         return Arrays.asList(person1,person2,person3,person4) ;
     }
 
