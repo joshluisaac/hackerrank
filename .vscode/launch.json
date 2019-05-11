@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BalancedParenthesis",
+            "request": "launch",
+            "mainClass": "com.avantsystems.problems.stackapplication.BalancedParenthesis",
+            "projectName": "hackerrank"
+        }
+    ]
+}

@@ -1,10 +1,9 @@
-package com.avantsystems.problems.stackapplication
+package com.avantsystems.problems.stackapplication;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class BalancedParenthesis {
 
