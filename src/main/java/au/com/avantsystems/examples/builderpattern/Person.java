@@ -9,33 +9,23 @@ public class Person {
   private String countryCode;
   private static String region;
 
-  public Person() {
-    System.out.println("Created person");
+  public Person(Builder builder) {
+    this.firstName = builder.firstName;
+    this.middleName = builder.middleName;
+    this.lastName = builder.lastName;
+    this.height = builder.height;
+    this.age = builder.age;
   }
 
-  public Person(String firstName, String middleName, String lastName, double height, int age) {
-    this.firstName = firstName;
-    this.middleName = middleName;
-    this.lastName = lastName;
-    this.height = height;
-    this.age = age;
+  public String getFirstName() {
+    return firstName;
   }
 
-  public void getSomething() {}
-
-  class InnerA {
-
-    public void getCountryCode() {
-      String X = Person.this.countryCode;
-    }
-
-    public void callMethod(){
-        Person.this.getSomething();
-    }
+  public int getAge() {
+    return age;
   }
 
   public static class Builder {
-
     private String firstName;
     private String middleName;
     private String lastName;
@@ -74,10 +64,7 @@ public class Person {
     }
 
     public Person build() {
-
-      new Person().getSomething();
-
-      return new Person(firstName, middleName, lastName, height, age);
+      return new Person(this);
     }
   }
 
